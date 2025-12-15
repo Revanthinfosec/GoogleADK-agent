@@ -1,17 +1,3 @@
-# Copyright 2025 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 from google.adk.agents import Agent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
@@ -28,9 +14,8 @@ SESSION_ID="1234"
 root_agent = Agent(
     name="basic_search_agent",
     model="gemini-2.5-flash",
-    description="Agent to answer questions using Google Search.",
-    instruction="I can answer your questions by searching the internet. Just ask me anything!",
-    # google_search is a pre-built tool which allows the agent to perform Google searches.
+    description="An intelligent research agent that retrieves up-to-date, accurate information by performing real-time Google Search queries and synthesizing results into clear, concise answers.",
+    instruction="You are a web-enabled assistant designed to answer user questions by searching the internet when necessary. For each query, determine whether real-time information is required, perform relevant Google Search queries, evaluate the credibility of sources, and provide accurate, well-structured responses. Clearly summarize findings and, when appropriate, reference the information source.",
     tools=[google_search]
 )
 
